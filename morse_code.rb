@@ -35,4 +35,10 @@ def decode_word(word)
   word.split.map { |w| decode_letter(w) }.join
 end
 
-  
+def decode_message(message)
+    @message = message.split('   ')
+    @msg = @message.map { |w| decode_word(w) }
+    @msg.join(' ')
+  end  
+
+puts decode_message('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
